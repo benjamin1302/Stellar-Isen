@@ -1,0 +1,139 @@
+canvas{width: 100%;height: 80%}
+
+body{
+    background-color: #FFFFFF ;
+    margin: 12px;
+    overflow: hidden;
+}
+
+body.header-fixed header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+#container{
+    margin: auto;
+    float: right;
+}
+
+li {
+    list-style: none;
+}
+
+nav {
+    overflow: hidden;
+}
+
+nav ul {
+    float: right;
+}
+
+nav li {
+    display: inline-block;
+    float: left;
+}
+
+nav a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+
+    padding: 25px;
+    transition: 0,3s all;
+}
+
+nav a:hover {
+    background: red;
+}
+
+.logo {
+    float: left;
+    margin: 20px;
+    color: #fff;
+    font-size: 50px;
+    line-height: 50px;
+    transition: 0.7s all;
+}
+
+body.header-fixed .logo {
+    font-size: 30px;
+}
+
+.alternate {
+    background: #000;
+    color: #fff;
+}
+
+
+.search {
+    width: 100%;
+    position: relative
+}
+
+.searchTerm {
+    float: left;
+    width: 100%;
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus{
+    color: #00B4CC;
+}
+
+.searchButton {
+    position: absolute;
+    right: -50px;
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text{
+    position: right;
+}
+
+footer p
+{
+    color: white;
+}
+
+
+#gui_container{
+    position: fixed;
+    top: 14%;
+    left: 86.5%;
+    background-color: #11173F;
+
+}
+
+
+
+#gui_container  li
+{
+    background-color: #11173F;
+    color: white;
+}
