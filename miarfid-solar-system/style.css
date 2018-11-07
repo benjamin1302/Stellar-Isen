@@ -16,7 +16,8 @@ body.header-fixed header {
 }
 
 #container{
-    margin: auto;
+    margin: 0 auto;
+    padding : 0 auto;
     float: right;
 }
 
@@ -29,25 +30,36 @@ nav {
 }
 
 nav ul {
-    float: right;
 }
 
 nav li {
     display: inline-block;
-    float: left;
 }
 
 nav a {
     display: inline-block;
     color: black;
     text-decoration: none;
-
+    margin: 0 auto;
     padding: 25px;
     transition: 0,3s all;
+    background-color: #EB1923;
 }
 
 nav a:hover {
-    background: red;
+    background-color: rgb(221, 75, 83);
+    transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s; 
+}
+
+nav a:not(:hover) {
+    background-color: #EB1923;
+    transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s; 
 }
 
 .logo {

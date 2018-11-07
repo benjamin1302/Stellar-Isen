@@ -29,10 +29,16 @@ function init(){
     camera.position.set(0, 0, 1000);
     scene.add(camera);
     
+
     // on créé un  cube au quel on définie un matériau puis on l’ajoute à la scène 
-    var geometry = new THREE.SphereGeometry( 200, 15, 15 );
+    var geometry = new THREE.SphereGeometry( 75, 15, 15 );
     var material = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture(texture_earth) } );
     mesh = new THREE.Mesh( geometry, material );
+    scene.add( mesh );
+
+    var geometry2 = new THREE.SphereGeometry( 75, 15, 15 );
+    var material2 = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture(texture_mars) } );
+    mesh = new THREE.Mesh( geometry2, material2 );
     scene.add( mesh );
 
     // on ajoute une lumière blanche

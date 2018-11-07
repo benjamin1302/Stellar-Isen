@@ -35,6 +35,11 @@ header{
     margin: 0 auto;
 }
 
+#logo{
+    width: 34.83%;
+    height: 27%;
+}
+
 header h1 {
     display: inline-block;
 }

@@ -217,11 +217,11 @@ function init (){
 	text2.style.position = 'absolute';
 	text2.style.width = 180;
 	text2.style.height = 40;
-	text2.style.color="#FFFFF";
+	text2.style.color="#FFFFFF";
 	
 	
-	text2.style.top = 40 + 'px';
-	text2.style.left = 10 + 'px';
+	text2.style.top = 95 + '%';
+	text2.style.right = 1 + '%';
 	document.body.appendChild(text2);
 
 	//Instancia la escena
