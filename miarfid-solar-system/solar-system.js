@@ -1,18 +1,3 @@
-/*
-Álvaro Peris
-
-Solar system.
-
-All data is real:
-	- Orbits
-	- Rotation periods
-	- Translation periods
-	- Planet's sizes
-	(by default, in order to have a good visualization of the planets, they are scaled x1000)
-
-*/
-
-
 // Global vars
 
 var renderer,scene,camera;
@@ -202,7 +187,7 @@ function init (){
 
 	renderer = new THREE.WebGLRenderer();
 	renderer.antialias = true;
-	renderer.setSize(window.innerWidth,window.innerHeight);
+	renderer.setSize(window.innerWidth-200,window.innerHeight-150);
 	renderer.setClearColor(new THREE.Color(0x000000),1.0);
 
 
@@ -220,7 +205,7 @@ function init (){
 	text2.style.color="#FFFFFF";
 	
 	
-	text2.style.top = 95 + '%';
+	text2.style.top = 85 + '%';
 	text2.style.right = 1 + '%';
 	document.body.appendChild(text2);
 
@@ -229,7 +214,7 @@ function init (){
 
 
 	var aspectRatio = window.innerWidth/window.innerHeight;
-	camera = new THREE.PerspectiveCamera(/*fovy*/60, /*razon de aspecto*/aspectRatio,/*cerca*/ near,/*lejos*/far);
+	camera = new THREE.PerspectiveCamera(/*fovy*/60, /*razonaspecto*/aspectRatio,/*cerca*/ near,/*lejos*/far);
 	
 	// Positioning the camera
 	camera.position.set(scale_factor*450,scale_factor*50,scale_factor*450);
@@ -889,7 +874,7 @@ function updateAspectRatio(){
 
 	// Update aspect ratio when moving the window
 
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( window.innerWidth-200, window.innerHeight-150 );
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 
@@ -904,93 +889,383 @@ function setupGui(){
 
 	effectController = {
         timeScale: 0.0001,
-        focus:'None',
+        focus:'false',
         follow : false,
         drawAxes : false,
         drawOrbits : false
 
     };
 
-	var gui = new dat.GUI();
+	/*var gui = new dat.GUI();
     gui.domElement.id = 'gui_container';
     //gui_container.appendChild(gui.domElement);
 	var h = gui.addFolder("System controls");
 	h.add(effectController, "follow").name("Follow planet");
-	h.add(effectController, "focus", ["None","Sun","Mercury", "Venus", "Earth", "Moon", "Mars", "Jupiter","Saturn","Uranus","Neptune"]).name("Focus on planet").onChange(function(value){
-
-
-		switch (effectController.focus){
-
-			case "Mercury" : 
-			camera.position.set(mercurio.position.x + 4*mercurio_tam,mercurio.position.y+mercurio_tam,mercurio.position.z+4*mercurio_tam);
-			camera.lookAt(mercurio.position);
-			break;
-
-
-			case "Venus" : 
-			camera.position.set(venus.position.x + 4*venus_tam,venus.position.y+venus_tam,mercurio.position.z+4*venus_tam);
-			camera.lookAt(venus.position);
-			break;
-
-			case "Earth" : 
-			camera.position.set(tierra.position.x + 4*tierra_tam,tierra.position.y+tierra_tam,tierra.position.z+4*tierra_tam);
-			camera.lookAt(tierra.position);
-			break;
-
-			case "Moon" : 
-			camera.position.set(luna.position.x + 4*luna_tam,luna.position.y+luna_tam,luna.position.z+4*luna_tam);
-			camera.lookAt(luna.position);
-			break;
-
-			case "Mars" : 
-			camera.position.set(marte.position.x + 4*marte_tam,marte.position.y+marte_tam,marte.position.z+4*marte_tam);
-			camera.lookAt(marte.position);
-			break;
-
-			case "Jupiter" : 
-			camera.position.set(jupiter.position.x + 4*jupiter_tam,jupiter.position.y+jupiter_tam,jupiter.position.z+4*jupiter_tam);
-			camera.lookAt(jupiter.position);
-			break;
-
-			case "Saturn" : 
-			camera.position.set(saturno.position.x + 4*saturno_tam,saturno.position.y+saturno_tam,saturno.position.z+4*saturno_tam);
-			camera.lookAt(saturno.position);
-			break;
-
-			case "Uranus" : 
-			camera.position.set(urano.position.x + 20*urano_tam,urano.position.y+urano_tam,urano.position.z+20*urano_tam);
-			camera.lookAt(urano.position);
-			break;
-
-			case "Neptune" : 
-			camera.position.set(neptuno.position.x + 4*neptuno_tam,neptuno.position.y,neptuno.position.z+4*neptuno_tam);
-			camera.lookAt(neptuno.position);
-			break;
-
-			case "Sun" : 
-			camera.position.set(scale_factor*450,scale_factor*50,scale_factor*450);
-			camera.lookAt(0,0,0);
-			break;
-
-		}
-
-	});
 
 	h.add(effectController, "timeScale", 0.0000,1,0.0001).name("Time control");
-	h.add(effectController, "drawAxes").name("Show axis").onChange(function(value){
-		if(value == true)
-			axisHelper.visible=true;
-		else axisHelper.visible=false;
-	});
 
 
 	h.add(effectController, "drawOrbits").name("Show orbits").onChange(function(value){
 		if(effectController.drawOrbits == true)
 			orbites.visible=true;
 		else 	orbites.visible=false;
-	});
+	});*/
 
 }
+
+function focus()
+{
+   var oA1 = document.getElementById('Soleil');
+   var oA2 = document.getElementById('Mercury');
+   var oA3 = document.getElementById('Venus');
+   var oA4 = document.getElementById('Earth');
+   var oA5 = document.getElementById('Mars');
+   var oA6 = document.getElementById('Jupiter');
+   var oA7 = document.getElementById('Saturn');
+   var oA8 = document.getElementById('Uranus');
+   var oA9 = document.getElementById('Neptune');
+
+   var i1 = document.getElementById("planet_info_Soleil");
+   var i2 = document.getElementById("planet_info_Mercury");
+   var i3 = document.getElementById("planet_info_Venus");
+   var i4 = document.getElementById("planet_info_Earth");
+   var i5 = document.getElementById("planet_info_Mars");
+   var i6 = document.getElementById("planet_info_Jupiter");
+   var i7 = document.getElementById("planet_info_Saturn");
+   var i8 = document.getElementById("planet_info_Uranus");
+   var i9 = document.getElementById("planet_info_Neptune");
+
+   var l0 = document.getElementById("moon");
+   var l1 = document.getElementById("moon_Earth");
+   var l2 = document.getElementById("moon_Mars");
+   var l3 = document.getElementById("moon_Jupiter");
+   var l4 = document.getElementById("moon_Saturn");
+   var l5 = document.getElementById("moon_Uranus");
+   var l6 = document.getElementById("moon_Neptune");
+   
+   var butt_link = document.getElementById("planet_button");
+   var butt_link2 = document.getElementById("planet_link");
+
+   oA1.onclick = function()
+   {
+
+		if(i1.className=="hidden"){
+			i1.className = "visible"; 
+			butt_link.className = "visible";
+			butt_link2.innerText = "Soleil"
+		}
+		else if(i1.className=="visible"){
+			i1.className = "hidden"; 
+			butt_link.className = "hidden";
+		}
+		i2.className = "hidden"
+		i3.className = "hidden"
+		i4.className = "hidden"
+		i5.className = "hidden"
+		i6.className = "hidden"
+		i7.className = "hidden"
+		i8.className = "hidden"
+		i9.className = "hidden"
+		l0.className = "hidden"
+		
+		camera.position.set(scale_factor*450,scale_factor*50,scale_factor*450);
+		camera.lookAt(sol.position);
+   };
+
+   oA2.onclick = function()
+   {
+	   	i1.className = "hidden"
+		   if(i2.className=="hidden"){
+			   i2.className = "visible"; 
+			   butt_link.className = "visible";
+			   butt_link2.innerText = "Mercure"
+			}
+		   else if(i2.className=="visible"){
+			   i2.className = "hidden"; 
+			   butt_link.className = "hidden";
+			}
+		i3.className = "hidden"
+		i4.className = "hidden"
+		i5.className = "hidden"
+		i6.className = "hidden"
+		i7.className = "hidden"
+		i8.className = "hidden"
+		i9.className = "hidden"
+		l0.className = "hidden"
+		camera.position.set(mercurio.position.x + 4*mercurio_tam,mercurio.position.y+mercurio_tam,mercurio.position.z+4*mercurio_tam);
+		camera.lookAt(mercurio.position);
+   };
+
+   oA3.onclick = function()
+   {
+	   	i1.className = "hidden"
+		i2.className = "hidden"
+		if(i3.className=="hidden"){
+			i3.className = "visible"; 
+			butt_link.className = "visible";
+			butt_link2.innerText = "Venus"
+		}
+		else if(i3.className=="visible"){
+			i3.className = "hidden"; 
+			butt_link.className = "hidden";
+		}
+		i4.className = "hidden"
+		i5.className = "hidden"
+		i6.className = "hidden"
+		i7.className = "hidden"
+		i8.className = "hidden"
+		i9.className = "hidden"
+		l0.className = "hidden"
+		camera.position.set(venus.position.x + 4*venus_tam,venus.position.y+venus_tam,mercurio.position.z+4*venus_tam);
+		camera.lookAt(venus.position);
+   };
+
+   oA4.onclick = function()
+   {	
+	   	i1.className = "hidden"
+		i2.className = "hidden"
+		i3.className = "hidden"
+		if(i4.className=="hidden"){
+			i4.className = "visible"; 
+			l0.className = "visible"; 
+			butt_link.className = "visible";
+			butt_link2.innerText = "Terre"
+		}
+		else if(i4.className=="visible"){
+			i4.className = "hidden"; 
+			l0.className = "hidden"; 
+			butt_link.className = "hidden";
+		}
+		i5.className = "hidden"
+		i6.className = "hidden"
+		i7.className = "hidden"
+		i8.className = "hidden"
+		i9.className = "hidden"
+		if (l0.className == "visible"){
+			l1.className = "visible"
+			l2.className = "hidden"
+			l3.className = "hidden"
+			l4.className = "hidden"
+			l5.className = "hidden"
+			l6.className = "hidden"
+		}
+		else if (l0.className == "hidden"){
+			l1.className = "hidden"
+			l2.className = "hidden"
+			l3.className = "hidden"
+			l4.className = "hidden"
+			l5.className = "hidden"
+			l6.className = "hidden"
+		}
+		camera.position.set(tierra.position.x + 4*tierra_tam,tierra.position.y+tierra_tam,tierra.position.z+4*tierra_tam);
+		camera.lookAt(tierra.position);
+   };
+
+   oA5.onclick = function()
+   {
+	   	i1.className = "hidden"
+		i2.className = "hidden"
+		i3.className = "hidden"
+		i4.className = "hidden"
+		if(i5.className=="hidden"){
+			i5.className = "visible"; 
+			l0.className = "visible"; 
+			butt_link.className = "visible";
+			butt_link2.innerText = "Mars"
+
+		}
+		else if(i5.className=="visible"){i5.className = "hidden"; l0.className = "hidden"; butt_link.className = "hidden";}
+		i6.className = "hidden"
+		i7.className = "hidden"
+		i8.className = "hidden"
+		i9.className = "hidden"
+		if (l0.className == "visible"){
+			l1.className = "hidden"
+			l2.className = "visible"
+			l3.className = "hidden"
+			l4.className = "hidden"
+			l5.className = "hidden"
+			l6.className = "hidden"
+		}
+		else if (l0.className == "hidden"){
+			l1.className = "hidden"
+			l2.className = "hidden"
+			l3.className = "hidden"
+			l4.className = "hidden"
+			l5.className = "hidden"
+			l6.className = "hidden"
+		}
+		camera.position.set(marte.position.x + 4*marte_tam,marte.position.y+marte_tam,marte.position.z+4*marte_tam);
+		camera.lookAt(marte.position);
+   };
+
+   oA6.onclick = function()
+   {
+	   	i1.className = "hidden"
+		i2.className = "hidden"
+		i3.className = "hidden"
+		i4.className = "hidden"
+		i5.className = "hidden"
+		if(i6.className=="hidden"){
+			i6.className = "visible"; 
+			l0.className = "visible"; 
+			butt_link.className = "visible";
+			butt_link2.innerText = "Jupiter"
+
+		}
+		else if(i6.className=="visible"){
+			i6.className = "hidden"; 
+			l0.className = "hidden"; 
+			butt_link.className = "hidden";
+		}
+		i7.className = "hidden"
+		i8.className = "hidden"
+		i9.className = "hidden"
+		if (l0.className == "visible"){
+			l1.className = "hidden"
+			l2.className = "hidden"
+			l3.className = "visible"
+			l4.className = "hidden"
+			l5.className = "hidden"
+			l6.className = "hidden"
+		}
+		else if (l0.className == "hidden"){
+			l1.className = "hidden"
+			l2.className = "hidden"
+			l3.className = "hidden"
+			l4.className = "hidden"
+			l5.className = "hidden"
+			l6.className = "hidden"
+		}
+		camera.position.set(jupiter.position.x + 4*jupiter_tam,jupiter.position.y+jupiter_tam,jupiter.position.z+4*jupiter_tam);
+		camera.lookAt(jupiter.position);
+   };
+
+   oA7.onclick = function()
+   {	
+	   	i1.className = "hidden"
+		i2.className = "hidden"
+		i3.className = "hidden"
+		i4.className = "hidden"
+		i5.className = "hidden"
+		i6.className = "hidden"
+		if(i7.className=="hidden"){
+			i7.className = "visible"; 
+			l0.className = "visible"; 
+			butt_link.className = "visible";
+			butt_link2.innerText = "Saturne"
+		}
+		else if(i7.className=="visible"){
+			i7.className = "hidden"; 
+			l0.className = "hidden"; 
+			butt_link.className = "hidden";
+		}
+		i8.className = "hidden"
+		i9.className = "hidden"
+		if (l0.className == "visible"){
+			l1.className = "hidden"
+			l2.className = "hidden"
+			l3.className = "hidden"
+			l4.className = "visible"
+			l5.className = "hidden"
+			l6.className = "hidden"
+		}
+		else if (l0.className == "hidden"){
+			l1.className = "hidden"
+			l2.className = "hidden"
+			l3.className = "hidden"
+			l4.className = "hidden"
+			l5.className = "hidden"
+			l6.className = "hidden"
+		}
+		camera.position.set(saturno.position.x + 4*saturno_tam,saturno.position.y+saturno_tam,saturno.position.z+4*saturno_tam);
+		camera.lookAt(saturno.position);
+   };
+
+   oA8.onclick = function()
+   {
+	   	i1.className = "hidden"
+		i2.className = "hidden"
+		i3.className = "hidden"
+		i4.className = "hidden"
+		i5.className = "hidden"
+		i6.className = "hidden"
+		i7.className = "hidden"
+		if(i8.className=="hidden"){
+			i8.className = "visible"; 
+			l0.className = "visible"; 
+			butt_link.className = "visible";
+			butt_link2.innerText = " d'Uranus"
+		}
+		else if(i8.className=="visible"){
+			i8.className = "hidden"; 
+			l0.className = "hidden"; 
+			butt_link.className = "hidden";
+		}
+		i9.className = "hidden"
+		if (l0.className == "visible"){
+			l1.className = "hidden"
+			l2.className = "hidden"
+			l3.className = "hidden"
+			l4.className = "hidden"
+			l5.className = "visible"
+			l6.className = "hidden"
+		}
+		else if (l0.className == "hidden"){
+			l1.className = "hidden"
+			l2.className = "hidden"
+			l3.className = "hidden"
+			l4.className = "hidden"
+			l5.className = "hidden"
+			l6.className = "hidden"
+		}
+		camera.position.set(urano.position.x + 20*urano_tam,urano.position.y+urano_tam,urano.position.z+20*urano_tam);
+		camera.lookAt(urano.position);
+   };
+
+   oA9.onclick = function()
+   {
+	   	i1.className = "hidden"
+		i2.className = "hidden"
+		i3.className = "hidden"
+		i4.className = "hidden"
+		i5.className = "hidden"
+		i6.className = "hidden"
+		i7.className = "hidden"
+		i8.className = "hidden"
+		if(i9.className=="hidden"){
+			i9.className = "visible"; 
+			l0.className = "visible"; 
+			butt_link.className = "visible";
+			butt_link2.innerText = "Neptune"
+		}
+		else if(i9.className=="visible"){
+			i9.className = "hidden"; 
+			l0.className = "hidden"; 
+			butt_link.className = "hidden";
+		}
+		if (l0.className == "visible"){
+			l1.className = "hidden"
+			l2.className = "hidden"
+			l3.className = "hidden"
+			l4.className = "hidden"
+			l5.className = "hidden"
+			l6.className = "visible"
+		}
+		else if (l0.className == "hidden"){
+			l1.className = "hidden"
+			l2.className = "hidden"
+			l3.className = "hidden"
+			l4.className = "hidden"
+			l5.className = "hidden"
+			l6.className = "hidden"
+		}
+		camera.position.set(neptuno.position.x + 4*neptuno_tam,neptuno.position.y,neptuno.position.z+4*neptuno_tam);
+		camera.lookAt(neptuno.position);
+   };
+}
+window.onload = focus;
+
 
 //Call all functions
 
