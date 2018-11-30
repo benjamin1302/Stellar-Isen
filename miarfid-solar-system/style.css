@@ -127,7 +127,7 @@ nav a {
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0%;
-    padding-right: 5%;
+    padding-right: 0%;
 }
 
 #selector li,
@@ -171,7 +171,8 @@ nav a {
     font-size: 11px;
 }
 
-#planet_button{
+
+tbody .planet_button{
     font-family: Audiowide;
     width: 100%;
     display: flex;
@@ -179,12 +180,14 @@ nav a {
     text-align: center;
     text-decoration: none;
     margin: 0 auto;
+    margin-left: 25%;
+    margin-right: 25%;
     margin-top: 1%;
-    padding-top: 20px;
-    padding-bottom: 20px;
     transition: 0, 3s all;
 }
-#planet_button p{
+
+
+.planet_button p{
     margin: 0 auto;
 }
 
@@ -199,7 +202,7 @@ nav a {
 }
 
 nav a:hover,
-#planet_button:hover,
+.planet_button a:hover,
 #selector li:hover,
 #interact #tag:hover,
 #interact #pdf_gen:hover {
@@ -213,7 +216,7 @@ nav a:hover,
 }
 
 nav a:not(:hover),
-#planet_button:not(:hover),
+.planet_button a:not(:hover),
 #selector li:not(:hover),
 #interact #tag:not(:hover),
 #interact #pdf_gen:not(:hover) {

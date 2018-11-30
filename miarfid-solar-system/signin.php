@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="shortcut icon" href="ressources/images/logo.png">
-        <title>Se connecter</title>
+        <title>S'enregistrer</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,10 +13,10 @@
     
     <body>
         <header id="topnav">
-            <a href="proyecto.htm"><img src="ressources/images/logo.png" alt="Logo du site" class="logo"/></a>
+            <a href="index.php"><img src="ressources/images/logo.png" alt="Logo du site" class="logo"/></a>
                     <nav role='navigation'>
                         <ul>
-                            <li class="button"><a href="login.html">Se connecter</a></li>
+                            <li class="button"><a href="login.php">Se connecter</a></li>
                         </ul>
                     </nav>
         </header>
@@ -30,11 +30,11 @@
                 <label for="pseudo">Nom de Compte :</label>  
                 <input type="text" name="pseudo" id="pseudo" placeholder="Votre Pseudonyme" minlength="3" required/>
                 <br />
-                <label for="email">Adresse E-mail :</label>  
-                <input type="email" name="email" id="email" placeholder="Votre adresse e-mail" required/>
-                <br />
                 <label for="pass">Votre mot de passe :</label>
-                <input type="password" name="password" id="password" placeholder="Mot de Passe" minlength="8" required/>
+                <input type="password" name="password" id="password" placeholder="Mot de Passe" minlength="4" required/>
+                <br />
+                <label for="pass">Confirmez votre mot de passe :</label>
+                <input type="password" name="password" id="password" placeholder="Mot de Passe" minlength="4" required/>
             </fieldset>
             <br />
             <input type="submit" id="submit" value="Valider" />

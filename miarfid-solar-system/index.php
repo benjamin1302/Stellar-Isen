@@ -10,10 +10,8 @@ $listePlanet[3] = getPlanetInfo('Mars');
 $listePlanet[4] = getPlanetInfo('Earth');
 $listePlanet[5] = getPlanetInfo('Jupiter');
 $listePlanet[6] = getPlanetInfo('Saturn');
-$listePlanet[7] = getPlanetInfo('Pluto');
-$listePlanet[8] = getPlanetInfo('Uranus');
-$listePlanet[9] = getPlanetInfo('Neptune');
-
+$listePlanet[7] = getPlanetInfo('Uranus');
+$listePlanet[8] = getPlanetInfo('Neptune');
 ?>
 
 
@@ -35,13 +33,14 @@ $listePlanet[9] = getPlanetInfo('Neptune');
 
 <body>
 <header id="topnav">
-    <a href="proyecto.htm"><img src="ressources/images/logo.png" alt="Logo du site" class="logo" /></a>
+    <a href="index.php"><img src="ressources/images/logo.png" alt="Logo du site" class="logo" /></a>
     <nav role='navigation'>
         <ul>
             <li><a href="#">Espace Personel</a></li>
             <div class="login_status">
-                <li><a href="login.html">Connexion</a></li>
-                <li><a href="signin.html">S'enregistrer</a></li>
+                <li><a href="login.php">Connexion</a></li>
+                <li><a href="signin.php">S'enregistrer</a></li>
+                <li><a href="#">Deconnexion</a></li>
             </div>
         </ul>
     </nav>
@@ -52,8 +51,10 @@ $listePlanet[9] = getPlanetInfo('Neptune');
 </header>
 <!--Conteneur du rendu 3D-->
 <div id='container'>
-
-    <?php
+    <div id="selector">
+        <ul>
+        <div id="planet_title">Planètes</div>
+        <?php
     for($i = 0; $i < count($listePlanet); $i++)
     {
         $nom                = $listePlanet[$i][0];
@@ -66,7 +67,7 @@ $listePlanet[9] = getPlanetInfo('Neptune');
         $masse              = $listePlanet[$i][7];
 
         echo "<li><a $nom id='$nom'> $nom </a></li>";
-        echo "<div id='planet_info_$nom'>";
+        echo "<div id='planet_info_$nom' class='hidden'>";
         echo "<table>";
         echo "<tr><td>Type</td><td>$type</td></tr>";
         echo "<tr><td>Diametre</td><td>$diametre KM</td></tr>";
@@ -81,7 +82,7 @@ $listePlanet[9] = getPlanetInfo('Neptune');
         }
         echo "<tr><td>Masse</td><td>$masse </td></tr>";
         echo "<tr><td>Densite</td><td>$densite m3</td></tr>";
-        echo "<tr><td> <a id='planet_button' class=hidden href='information.html'><p> plus d'informations </p></a> </td></tr>";
+        echo "<tr class='planet_button' ><td > <a  href='information.php?planet=$nom'><p>Plus d'informations </p></a> </td></tr>";
 
 
         echo "</table>";
@@ -90,44 +91,47 @@ $listePlanet[9] = getPlanetInfo('Neptune');
 
 
     ?>
+        </ul>
+    </div>
+    
     <div id="moon" class="hidden">
         <ul>
             <div id="moon_title">Lunes</div>
             <div id="moon_Earth" class="hidden">
-                <li><a href="information.html">Lune</a></li>
+                <li><a href="information.php">Lune</a></li>
             </div>
             <div id="moon_Mars" class="hidden">
-                <li><a href="information.html">Deimos</a></li>
-                <li><a href="information.html">Phobos</a></li>
+                <li><a href="information.php">Deimos</a></li>
+                <li><a href="information.php">Phobos</a></li>
             </div>
             <div id="moon_Jupiter" class="hidden">
-                <li><a href="information.html">Callisto</a></li>
-                <li><a href="information.html">Ganymède</a></li>
-                <li><a href="information.html">Europe</a></li>
-                <li><a href="information.html">Io</a></li>
+                <li><a href="information.php">Callisto</a></li>
+                <li><a href="information.php">Ganymède</a></li>
+                <li><a href="information.php">Europe</a></li>
+                <li><a href="information.php">Io</a></li>
             </div>
             <div id="moon_Saturn" class="hidden">
-                <li><a href="information.html">Dioné</a></li>
-                <li><a href="information.html">Encelade</a></li>
-                <li><a href="information.html">Hyperion</a></li>
-                <li><a href="information.html">Japet</a></li>
-                <li><a href="information.html">Mimas</a></li>
-                <li><a href="information.html">Pheobé</a></li>
-                <li><a href="information.html">Rhéa</a></li>
-                <li><a href="information.html">Tethys</a></li>
-                <li><a href="information.html">Titan</a></li>
+                <li><a href="information.php">Dioné</a></li>
+                <li><a href="information.php">Encelade</a></li>
+                <li><a href="information.php">Hyperion</a></li>
+                <li><a href="information.php">Japet</a></li>
+                <li><a href="information.php">Mimas</a></li>
+                <li><a href="information.php">Pheobé</a></li>
+                <li><a href="information.php">Rhéa</a></li>
+                <li><a href="information.php">Tethys</a></li>
+                <li><a href="information.php">Titan</a></li>
             </div>
             <div id="moon_Uranus" class="hidden">
-                <li><a href="information.html">Ariel</a></li>
-                <li><a href="information.html">Puck</a></li>
-                <li><a href="information.html">Miranda</a></li>
-                <li><a href="information.html">Obéron</a></li>
-                <li><a href="information.html">Titania</a></li>
-                <li><a href="information.html">Umbriel</a></li>
+                <li><a href="information.php">Ariel</a></li>
+                <li><a href="information.php">Puck</a></li>
+                <li><a href="information.php">Miranda</a></li>
+                <li><a href="information.php">Obéron</a></li>
+                <li><a href="information.php">Titania</a></li>
+                <li><a href="information.php">Umbriel</a></li>
             </div>
             <div id="moon_Neptune" class="hidden">
-                <li><a href="information.html">Néréide</a></li>
-                <li><a href="information.html">Triton</a></li>
+                <li><a href="information.php">Néréide</a></li>
+                <li><a href="information.php">Triton</a></li>
             </div>
 
 
@@ -138,9 +142,6 @@ $listePlanet[9] = getPlanetInfo('Neptune');
 
     <div id="gui_container"></div>
 </div>
-
-<a id="planet_button" class="hidden" href="information.html"><p>Accèder à la page de l'astre "<span id="planet_link"></span>"</p></a>
-
 
 <footer>
 </footer>

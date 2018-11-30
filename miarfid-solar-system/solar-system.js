@@ -942,21 +942,15 @@ function focus()
    var l4 = document.getElementById("moon_Saturn");
    var l5 = document.getElementById("moon_Uranus");
    var l6 = document.getElementById("moon_Neptune");
-   
-   var butt_link = document.getElementById("planet_button");
-   var butt_link2 = document.getElementById("planet_link");
 
    oA1.onclick = function()
    {
 
 		if(i1.className=="hidden"){
-			i1.className = "visible"; 
-			butt_link.className = "visible";
-			butt_link2.innerText = "Soleil"
+			i1.className = "visible";
 		}
 		else if(i1.className=="visible"){
 			i1.className = "hidden"; 
-			butt_link.className = "hidden";
 		}
 		i2.className = "hidden"
 		i3.className = "hidden"
@@ -977,12 +971,9 @@ function focus()
 	   	i1.className = "hidden"
 		   if(i2.className=="hidden"){
 			   i2.className = "visible"; 
-			   butt_link.className = "visible";
-			   butt_link2.innerText = "Mercure"
 			}
 		   else if(i2.className=="visible"){
 			   i2.className = "hidden"; 
-			   butt_link.className = "hidden";
 			}
 		i3.className = "hidden"
 		i4.className = "hidden"
@@ -1002,12 +993,9 @@ function focus()
 		i2.className = "hidden"
 		if(i3.className=="hidden"){
 			i3.className = "visible"; 
-			butt_link.className = "visible";
-			butt_link2.innerText = "Venus"
 		}
 		else if(i3.className=="visible"){
 			i3.className = "hidden"; 
-			butt_link.className = "hidden";
 		}
 		i4.className = "hidden"
 		i5.className = "hidden"
@@ -1028,13 +1016,10 @@ function focus()
 		if(i4.className=="hidden"){
 			i4.className = "visible"; 
 			l0.className = "visible"; 
-			butt_link.className = "visible";
-			butt_link2.innerText = "Terre"
 		}
 		else if(i4.className=="visible"){
 			i4.className = "hidden"; 
 			l0.className = "hidden"; 
-			butt_link.className = "hidden";
 		}
 		i5.className = "hidden"
 		i6.className = "hidden"
@@ -1070,11 +1055,9 @@ function focus()
 		if(i5.className=="hidden"){
 			i5.className = "visible"; 
 			l0.className = "visible"; 
-			butt_link.className = "visible";
-			butt_link2.innerText = "Mars"
 
 		}
-		else if(i5.className=="visible"){i5.className = "hidden"; l0.className = "hidden"; butt_link.className = "hidden";}
+		else if(i5.className=="visible"){i5.className = "hidden"; l0.className = "hidden";}
 		i6.className = "hidden"
 		i7.className = "hidden"
 		i8.className = "hidden"
@@ -1109,14 +1092,11 @@ function focus()
 		if(i6.className=="hidden"){
 			i6.className = "visible"; 
 			l0.className = "visible"; 
-			butt_link.className = "visible";
-			butt_link2.innerText = "Jupiter"
 
 		}
 		else if(i6.className=="visible"){
 			i6.className = "hidden"; 
 			l0.className = "hidden"; 
-			butt_link.className = "hidden";
 		}
 		i7.className = "hidden"
 		i8.className = "hidden"
@@ -1152,13 +1132,10 @@ function focus()
 		if(i7.className=="hidden"){
 			i7.className = "visible"; 
 			l0.className = "visible"; 
-			butt_link.className = "visible";
-			butt_link2.innerText = "Saturne"
 		}
 		else if(i7.className=="visible"){
 			i7.className = "hidden"; 
 			l0.className = "hidden"; 
-			butt_link.className = "hidden";
 		}
 		i8.className = "hidden"
 		i9.className = "hidden"
@@ -1194,13 +1171,10 @@ function focus()
 		if(i8.className=="hidden"){
 			i8.className = "visible"; 
 			l0.className = "visible"; 
-			butt_link.className = "visible";
-			butt_link2.innerText = " d'Uranus"
 		}
 		else if(i8.className=="visible"){
 			i8.className = "hidden"; 
 			l0.className = "hidden"; 
-			butt_link.className = "hidden";
 		}
 		i9.className = "hidden"
 		if (l0.className == "visible"){
@@ -1236,13 +1210,9 @@ function focus()
 		if(i9.className=="hidden"){
 			i9.className = "visible"; 
 			l0.className = "visible"; 
-			butt_link.className = "visible";
-			butt_link2.innerText = "Neptune"
 		}
 		else if(i9.className=="visible"){
 			i9.className = "hidden"; 
-			l0.className = "hidden"; 
-			butt_link.className = "hidden";
 		}
 		if (l0.className == "visible"){
 			l1.className = "hidden"
