@@ -115,11 +115,16 @@ nav a {
 #moon {
     z-index: auto;
     position: fixed;
-    right: 2.55%;
+    right: 2.2%;
     background-color: rgba(16, 16, 16, 0.66);
     text-align: center;
     width: 17.15%;
     border: 1px solid rgb(235, 232, 232);
+}
+
+#moon ul {
+    height: 370px;
+    overflow-y: auto;
 }
 
 #selector ul, #moon ul {
@@ -168,7 +173,7 @@ nav a {
 }
 
 .visible td {
-    font-size: 11px;
+    font-size: 95%;
 }
 
 
@@ -398,6 +403,17 @@ footer p {
     color: #999;
 }
 
+#result {
+    z-index: -1;
+    overflow-y: auto;
+    height: 80px;
+}
+#result, #result li{
+    padding: 0 auto;
+    font-family: K2D;
+    background-color: #FFFFFF;
+    color: black;
+}
 
 /*Propriétés liées aux formulaires de connexion et d'authentification*/
 
@@ -488,7 +504,3 @@ form #tag1, form #tag2{
     padding: 0 auto;
 }
 /*Propriétés de résolution mobile*/
-
-@media only screen and (max-width: 600px) {
-    body {}
-}

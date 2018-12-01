@@ -6,12 +6,23 @@ $listePlanet = array(array());
 $listePlanet[0] = getPlanetInfo('Soleil');
 $listePlanet[1] = getPlanetInfo('Venus');
 $listePlanet[2] = getPlanetInfo('Mercury');
-$listePlanet[3] = getPlanetInfo('Mars');
-$listePlanet[4] = getPlanetInfo('Earth');
+$listePlanet[3] = getPlanetInfo('Earth');
+$listePlanet[4] = getPlanetInfo('Mars');
 $listePlanet[5] = getPlanetInfo('Jupiter');
 $listePlanet[6] = getPlanetInfo('Saturn');
 $listePlanet[7] = getPlanetInfo('Uranus');
 $listePlanet[8] = getPlanetInfo('Neptune');
+
+$tagList = array();
+$tagList = getTags();
+
+$satList = array(array());
+$satList[0] = getSat('Earth');
+$satList[1] = getSat('Mars');
+$satList[2] = getSat('Jupiter');
+$satList[3] = getSat('Saturn');
+$satList[4] = getSat('Uranus');
+$satList[5] = getSat('Neptune');
 ?>
 
 
@@ -45,8 +56,16 @@ $listePlanet[8] = getPlanetInfo('Neptune');
         </ul>
     </nav>
     <form id="searchbar">
-        <input type="search" placeholder="Recherche">
+        <input type="search" placeholder="Recherche" id="search_input">
         <button type="submit"><i class="fa fa-check"></i></button>
+        <ul id="result" class="hidden">
+            <?php
+                for($i = 0; $i < count($tagList); $i++){
+                    $tag = $tagList[$i];
+                    echo "<li><a href='#'>"+$tag+"</a></li>";
+                }
+            ?>
+        </ul>
     </form>
 </header>
 <!--Conteneur du rendu 3D-->
@@ -95,43 +114,57 @@ $listePlanet[8] = getPlanetInfo('Neptune');
     </div>
     
     <div id="moon" class="hidden">
+    <div id="moon_title">Lunes</div>
         <ul>
-            <div id="moon_title">Lunes</div>
+            
             <div id="moon_Earth" class="hidden">
-                <li><a href="information.php">Lune</a></li>
+            <?php
+                    for($i = 0; $i < count($satList[0]); $i++){
+                        $satellite = $satList[0][$i];
+                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                    } 
+            ?>
+                
             </div>
             <div id="moon_Mars" class="hidden">
-                <li><a href="information.php">Deimos</a></li>
-                <li><a href="information.php">Phobos</a></li>
+            <?php
+                    for($i = 0; $i < count($satList[1]); $i++){
+                        $satellite = $satList[1][$i];
+                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                    } 
+            ?>
             </div>
             <div id="moon_Jupiter" class="hidden">
-                <li><a href="information.php">Callisto</a></li>
-                <li><a href="information.php">Ganymède</a></li>
-                <li><a href="information.php">Europe</a></li>
-                <li><a href="information.php">Io</a></li>
+            <?php
+                    for($i = 0; $i < count($satList[2]); $i++){
+                        $satellite = $satList[2][$i];
+                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                    } 
+            ?>
             </div>
             <div id="moon_Saturn" class="hidden">
-                <li><a href="information.php">Dioné</a></li>
-                <li><a href="information.php">Encelade</a></li>
-                <li><a href="information.php">Hyperion</a></li>
-                <li><a href="information.php">Japet</a></li>
-                <li><a href="information.php">Mimas</a></li>
-                <li><a href="information.php">Pheobé</a></li>
-                <li><a href="information.php">Rhéa</a></li>
-                <li><a href="information.php">Tethys</a></li>
-                <li><a href="information.php">Titan</a></li>
+            <?php
+                    for($i = 0; $i < count($satList[3]); $i++){
+                        $satellite = $satList[3][$i];
+                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                    } 
+            ?>
             </div>
             <div id="moon_Uranus" class="hidden">
-                <li><a href="information.php">Ariel</a></li>
-                <li><a href="information.php">Puck</a></li>
-                <li><a href="information.php">Miranda</a></li>
-                <li><a href="information.php">Obéron</a></li>
-                <li><a href="information.php">Titania</a></li>
-                <li><a href="information.php">Umbriel</a></li>
+            <?php
+                    for($i = 0; $i < count($satList[4]); $i++){
+                        $satellite = $satList[4][$i];
+                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                    } 
+            ?>
             </div>
             <div id="moon_Neptune" class="hidden">
-                <li><a href="information.php">Néréide</a></li>
-                <li><a href="information.php">Triton</a></li>
+            <?php
+                    for($i = 0; $i < count($satList[5]); $i++){
+                        $satellite = $satList[5][$i];
+                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                    } 
+            ?>
             </div>
 
 
@@ -154,6 +187,7 @@ $listePlanet[8] = getPlanetInfo('Neptune');
 <script src="lib/threex.keyboardstate.js"></script>
 
 <script src="solar-system.js"></script>
+<script src="searchbar.js"></script>
 
 
 

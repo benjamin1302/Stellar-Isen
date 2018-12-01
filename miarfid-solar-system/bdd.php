@@ -28,7 +28,7 @@ function getPlanetInfo( $name )
         $bdd = connexionBDD();
         // set the PDO error mode to exception
 
-        $sql =  "SELECT nom, type, diametre, longueurJour, periodeOrbital, temperatureMoyenne, densite, masse FROM astre where nom='$name'";
+        $sql =  "SELECT nom, type, diametre, longueurJour, periodeOrbital, temperatureMoyenne, densite, masse, description FROM astre where nom='$name'";
         foreach  ($bdd->query($sql) as $row) {
             $infoPlanet[0] = $row['nom'];
             $infoPlanet[1] = $row['type'];
@@ -38,6 +38,7 @@ function getPlanetInfo( $name )
             $infoPlanet[5] = $row['temperatureMoyenne'];
             $infoPlanet[6] = $row['densite'];
             $infoPlanet[7] = $row['masse'];
+            $infoPlanet[8] = $row['description'];
 
         }
 
@@ -48,6 +49,77 @@ function getPlanetInfo( $name )
     }
 
     return $infoPlanet;
+}
+
+function getSatInfo( $name )
+{
+    $infoSat = array(array());
+    try {
+        $bdd = connexionBDD();
+        // set the PDO error mode to exception
+
+        $sql =  "SELECT nom, diametre, periodeOrbital, temperatureMoyenne, description FROM `satellite` WHERE nom ='$name'";
+        foreach  ($bdd->query($sql) as $row) {
+            $infoSat[0] = $row['nom'];
+            $infoSat[1] = $row['diametre'];
+            $infoSat[2] = $row['periodeOrbital'];
+            $infoSat[3] = $row['temperatureMoyenne'];
+            $infoSat[4] = $row['description'];
+
+        }
+
+    }
+    catch (Exception $e)
+    {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    return $infoSat;
+}
+
+function getSat( $name)
+{
+    $satList = array();
+    $i = 0;
+    try {
+        $bdd = connexionBDD();
+        // set the PDO error mode to exception
+
+        $sql =  "SELECT s.nom FROM astre a, satellite s WHERE a.id = s.astreId AND a.nom='$name'";
+        foreach  ($bdd->query($sql) as $row) {
+            $satList[$i] = $row['nom'];
+            $i++;
+        }
+
+    }
+    catch (Exception $e)
+    {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    return $satList;
+}
+
+function getTags()
+{
+    $tagList = array();
+    try {
+        $bdd = connexionBDD();
+        // set the PDO error mode to exception
+
+        $sql =  "SELECT tag FROM tag WHERE 1 ";
+        foreach  ($bdd->query($sql) as $row) {
+            $tagList = $row['tag'];
+
+        }
+
+    }
+    catch (Exception $e)
+    {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    return $tagList;
 }
 
 function authentification( $user, $password)

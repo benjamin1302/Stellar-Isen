@@ -187,6 +187,7 @@ function init (){
 
 	renderer = new THREE.WebGLRenderer();
 	renderer.antialias = true;
+	console.log(window.innerHeight-150);
 	renderer.setSize(window.innerWidth-200,window.innerHeight-150);
 	renderer.setClearColor(new THREE.Color(0x000000),1.0);
 
@@ -199,6 +200,7 @@ function init (){
 	
 
 	text2 = document.createElement('div');
+	text2.id="days";
 	text2.style.position = 'absolute';
 	text2.style.width = 180;
 	text2.style.height = 40;
