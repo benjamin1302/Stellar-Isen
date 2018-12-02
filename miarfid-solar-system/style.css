@@ -89,7 +89,7 @@ nav {
     overflow: hidden;
 }
 
-nav li , nav div, #login_status li{
+nav li , nav div, #connected li, #disconnected li{
     display: inline-block;
 }
 
@@ -355,6 +355,18 @@ footer p {
     width: 11, 85%;
 }
 
+#favori_list ul, #favori_list li{
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+    border: 1px solid white;
+    width: 100%;
+}
+
+#favori_list li{
+    display: block;
+    padding: 1%;
+}
 
 /*Propriétés liées à la barre de recherche*/
 

@@ -146,6 +146,28 @@ function getTagsbySat($name)
     return $tagList;
 }
 
+function getSearchList()
+{
+    $searchList = array(array());
+    try {
+        $bdd = connexionBDD();
+        // set the PDO error mode to exception
+
+        $sql =  "SELECT a.nom, t.tag FROM astre a, tag t WHERE a.id = t.astreId";
+        foreach  ($bdd->query($sql) as $row) {
+            $searchList[0] = $row['nom'];
+            $searchList[1] = $row['tag'];
+        }
+
+    }
+    catch (Exception $e)
+    {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    return $searchList;
+}
+
 function authentification( $user, $password)
 {
     $bdd = connexionBDD();

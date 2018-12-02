@@ -38,11 +38,13 @@ else if($sat==1){
         <a href="index.php"><img src="ressources/images/logo.png" alt="Logo du site" class="logo" /></a>
         <nav role='navigation'>
             <ul>
-                <li><a href="#">Espace Personel</a></li>
-                <div class="login_status">
+                <div id ="connected" class="hidden">
+                    <li><a href="user_space.php">Espace Personel</a></li>
+                    <li><a href="#">Deconnexion</a></li>
+                </div>
+                <div id="disconnected" class="visible">
                     <li><a href="login.php">Connexion</a></li>
                     <li><a href="signin.php">S'enregistrer</a></li>
-                    <li><a href="#">Deconnexion</a></li>
                 </div>
             </ul>
         </nav>
