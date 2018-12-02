@@ -46,6 +46,20 @@ function init(){
     // on créé la sphère et on lui applique une texture sous forme d’image
     var geometry = new THREE.SphereGeometry( planetRadius, 32, 32 );
     var name = document.getElementById('texture').textContent;
+
+    function UrlExists(url)
+    {
+      var http = new XMLHttpRequest();
+      http.open('HEAD', url, false);
+      http.send();
+      return http.status!=404;
+    }
+    if (UrlExists('ressources/images/textures/'+name+'.jpg')) {
+    }
+    else {
+      name = 'Other'
+    }
+
     var material = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('ressources/images/textures/'+name+'.jpg', new THREE.SphericalReflectionMapping()), overdraw: true } );
     mesh = new THREE.Mesh( geometry, material );
     scene.add( mesh );

@@ -2,7 +2,16 @@
 include('bdd.php');
 
 $listePlanet = array();
-$listePlanet = getPlanetInfo($_GET['planet'])
+$sat = $_GET['sat'];
+$parent = $_GET['parent'];
+if($sat==0){
+    $listePlanet = getPlanetInfo($_GET['planet']); 
+}
+else if($sat==1){
+    $listePlanet = getSatInfo($_GET['planet']); 
+}
+
+
 ?>
 
 <html>
@@ -35,7 +44,7 @@ $listePlanet = getPlanetInfo($_GET['planet'])
             </ul>
         </nav>
         <form id="searchbar">
-            <input type="search" placeholder="Recherche">
+            <input type="search" placeholder="Recherche" id="search_input">
             <button type="submit"><i class="fa fa-check"></i></button>
             <ul id="result" class="hidden">
         
@@ -50,6 +59,7 @@ $listePlanet = getPlanetInfo($_GET['planet'])
             <h3>Texte Descriptif</h3>
             <p>
                 <?php 
+                if($sat == 0){
                 $nom                = $listePlanet[0];
                 $type               = $listePlanet[1];
                 $diametre           = $listePlanet[2];
@@ -59,6 +69,14 @@ $listePlanet = getPlanetInfo($_GET['planet'])
                 $densite            = $listePlanet[6];
                 $masse              = $listePlanet[7];
                 $description        = $listePlanet[8];
+                }
+                else if($sat == 1){
+                    $nom                = $listePlanet[0];
+                    $diametre           = $listePlanet[1];
+                    $periodeOrbital     = $listePlanet[2];
+                    $temperatureMoyenne = $listePlanet[3];
+                    $description        = $listePlanet[4];
+                }
 
                 echo "$description"
                 ?>
@@ -70,19 +88,21 @@ $listePlanet = getPlanetInfo($_GET['planet'])
             <?php
         
         echo "<table>";
-        echo "<tr><td>Type</td><td>$type</td></tr>";
+        if($sat == 0){echo "<tr><td>Type</td><td>$type</td></tr>";}
         echo "<tr><td>Diametre</td><td>$diametre KM</td></tr>";
-        if(!empty($longueurJour))
+        if($sat == 0){if(!empty($longueurJour))
         {
             echo "<tr><td>Longueur du jour</td><td>$longueurJour Hrs</td></tr>";
-        }
+        }}
         echo "<tr><td>Temperature moyenne</td><td>$temperatureMoyenne K</td></tr>";
-        if(!empty($longueurJour))
+        if($sat == 0){if(!empty($longueurJour))
         {
             echo "<tr><td>Periode orbital</td><td>$periodeOrbital Days </td></tr>";
-        }
-        echo "<tr><td>Masse</td><td>$masse </td></tr>";
-        echo "<tr><td>Densite</td><td>$densite m3</td></tr>";
+        }}
+        if($sat == 1){echo "<tr><td>Periode orbital</td><td>$periodeOrbital Days </td></tr>";}
+        if($sat == 0){echo "<tr><td>Masse</td><td>$masse </td></tr>";
+        echo "<tr><td>Densite</td><td>$densite m3</td></tr>";}
+        if($sat == 1){echo "<tr><td>Satellite de</td><td><a href='?planet=$parent&amp;sat=0&amp;parent=$parent'>$parent</a></td></tr>";}
         echo "</table>";
         echo "</div>";
     ?>

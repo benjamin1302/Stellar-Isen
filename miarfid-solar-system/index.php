@@ -101,7 +101,7 @@ $satList[5] = getSat('Neptune');
         }
         echo "<tr><td>Masse</td><td>$masse </td></tr>";
         echo "<tr><td>Densite</td><td>$densite m3</td></tr>";
-        echo "<tr class='planet_button' ><td > <a  href='information.php?planet=$nom'><p>Plus d'informations </p></a> </td></tr>";
+        echo "<tr class='planet_button' ><td > <a  href='information.php?planet=$nom&amp;sat=0&amp;parent=$nom'><p>Plus d'informations </p></a> </td></tr>";
 
 
         echo "</table>";
@@ -121,7 +121,7 @@ $satList[5] = getSat('Neptune');
             <?php
                     for($i = 0; $i < count($satList[0]); $i++){
                         $satellite = $satList[0][$i];
-                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                        echo "<li><a href='information.php?planet=$satellite&amp;sat=1&amp;parent=Earth'>$satellite</a></li>";
                     } 
             ?>
                 
@@ -130,7 +130,7 @@ $satList[5] = getSat('Neptune');
             <?php
                     for($i = 0; $i < count($satList[1]); $i++){
                         $satellite = $satList[1][$i];
-                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                        echo "<li><a href='information.php?planet=$satellite&amp;sat=1&amp;parent=Mars'>$satellite</a></li>";
                     } 
             ?>
             </div>
@@ -138,7 +138,7 @@ $satList[5] = getSat('Neptune');
             <?php
                     for($i = 0; $i < count($satList[2]); $i++){
                         $satellite = $satList[2][$i];
-                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                        echo "<li><a href='information.php?planet=$satellite&amp;sat=1&amp;parent=Jupiter'>$satellite</a></li>";
                     } 
             ?>
             </div>
@@ -146,7 +146,7 @@ $satList[5] = getSat('Neptune');
             <?php
                     for($i = 0; $i < count($satList[3]); $i++){
                         $satellite = $satList[3][$i];
-                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                        echo "<li><a href='information.php?planet=$satellite&amp;sat=1&amp;parent=Saturn'>$satellite</a></li>";
                     } 
             ?>
             </div>
@@ -154,7 +154,7 @@ $satList[5] = getSat('Neptune');
             <?php
                     for($i = 0; $i < count($satList[4]); $i++){
                         $satellite = $satList[4][$i];
-                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                        echo "<li><a href='information.php?planet=$satellite&amp;sat=1&amp;parent=Uranus'>$satellite</a></li>";
                     } 
             ?>
             </div>
@@ -162,7 +162,7 @@ $satList[5] = getSat('Neptune');
             <?php
                     for($i = 0; $i < count($satList[5]); $i++){
                         $satellite = $satList[5][$i];
-                        echo "<li><a href='information.php?planet=0&ampsat=$satellite'>$satellite</a></li>";
+                        echo "<li><a href='information.php?planet=$satellite&amp;sat=1&amp;parent=Neptune'>$satellite</a></li>";
                     } 
             ?>
             </div>
