@@ -2,13 +2,16 @@
 include('bdd.php');
 
 $listePlanet = array();
+$tagList = array();
 $sat = $_GET['sat'];
 $parent = $_GET['parent'];
 if($sat==0){
     $listePlanet = getPlanetInfo($_GET['planet']); 
+    $tagList = getTagsByAstre($_GET['planet']);
 }
 else if($sat==1){
     $listePlanet = getSatInfo($_GET['planet']); 
+    $tagList = getTagsBySat($_GET['planet']);
 }
 
 
@@ -113,8 +116,12 @@ else if($sat==1){
             <h4 id="tag"><a href="#">Gestions des tags</a></h4>
             <div id="tag_content" class="hidden">
                 <ul>
-                    <!--Inserer à la place de cette item de liste d'exemple, les tags de bases-->
-                    <li><?php echo "$listePlanet[0]"?></li>
+                <?php 
+                    for($i = 0; $i < count($tagList); $i++){
+                        echo "<li>$tagList[$i]</li>";
+                    }
+                ?>
+                
                 </ul>
                 <form>
                     <input id="tag1" type="search" placeholder="Ajouter un tag">

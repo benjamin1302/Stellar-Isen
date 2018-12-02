@@ -100,17 +100,41 @@ function getSat( $name)
     return $satList;
 }
 
-function getTags()
+function getTagsbyAstre($name)
 {
     $tagList = array();
+    $i = 0;
     try {
         $bdd = connexionBDD();
         // set the PDO error mode to exception
 
-        $sql =  "SELECT tag FROM tag WHERE 1 ";
+        $sql =  "SELECT t.tag FROM astre a, tag t WHERE a.id = t.astreId AND a.nom='$name'";
         foreach  ($bdd->query($sql) as $row) {
-            $tagList = $row['tag'];
+            $tagList[$i] = $row['tag'];
+            $i++;
+        }
 
+    }
+    catch (Exception $e)
+    {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    return $tagList;
+}
+
+function getTagsbySat($name)
+{
+    $tagList = array();
+    $i = 0;
+    try {
+        $bdd = connexionBDD();
+        // set the PDO error mode to exception
+
+        $sql =  "SELECT t.tag FROM satellite s, tag t WHERE s.id = t.satId AND s.nom='$name'";
+        foreach  ($bdd->query($sql) as $row) {
+            $tagList[$i] = $row['tag'];
+            $i++;
         }
 
     }

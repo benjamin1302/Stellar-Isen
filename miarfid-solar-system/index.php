@@ -13,9 +13,6 @@ $listePlanet[6] = getPlanetInfo('Saturn');
 $listePlanet[7] = getPlanetInfo('Uranus');
 $listePlanet[8] = getPlanetInfo('Neptune');
 
-$tagList = array();
-$tagList = getTags();
-
 $satList = array(array());
 $satList[0] = getSat('Earth');
 $satList[1] = getSat('Mars');
