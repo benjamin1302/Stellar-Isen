@@ -20,6 +20,7 @@
     "orbitalVelocity": null,
     "orbitalInclination": null,
     "axialTilt": null,
+    "description": "Corps céleste lumineux, le soleil (sol en Latin, helios en Grec) est létoile du système solaire, vénérée dans de nombreuses religions antiques en tant que lun des dieux majeurs. Il est lastre le plus lumineux du Système solaire. Le soleil est une étoile de type naine jaune. Cest donc une énorme boule de gaz dans laquelle se produit une fusion nucléaire. Le soleil possède un diamètre denviron 1 400 000 km. Il est 110 fois plus gros que la Terre. Il représente 99,86% du système solaire, soit 330 000 fois celle de la Terre. Environ 73,46 % de cette masse est composée dhydrogène, 24,85 % dhélium et le reste (0,1 %) est constitué dautres éléments plus lourds. La température à la surface du soleil varie entre 8500 degrés Celsius au plus profond de la photosphère et atteint 4200 degrés Celsius à la surface de la photosphère. La température du centre du soleil est environ de 15 000 000 degrés Celsius. Le soleil est si chaud parce quil y a du gaz enflammé qui séchappe et donne ainsi de la chaleur à la Photosphère. ",
     "meanTemperature": "5778 K",
     "solarConstant": 1.365,
     "composition": {
@@ -58,6 +59,7 @@
       "orbitalInclination": 7,
       "axialTilt": 0.01,
       "orbitPositionOffset": 48,
+      "description": "Mercure est la planète la plus proche du Soleil (58 000 000 km de distance) et aussi la plus petite du système solaire. Elle doit son nom au dieu romain Mercure. La température sur Mercure, à la surface, varie entre -183°C et +427°C. Elle a un diamètre de 4 900 kilomètres. La durée de sa rotation autour du Soleil est de 88 jours terrestres. Cette planète na pas de satellite naturel. On la découverte pendant lAntiquité. Mercure fait un tour sur elle-même en 59 jours terrestres. Mercure est la plus petite planète du système solaire et aussi la plus rapide sur son orbite. Sa masse et sa gravité sont faibles. Elle ne retient donc pas une atmosphère. Elle est proche aussi de Vénus.  ",
       "meanTemperature": 167,
       "surfaceTemps": {
         "min": 100,
@@ -89,6 +91,7 @@
       "axialTilt": 177.4,
       "orbitPositionOffset": 155,
       "meanTemperature": 464,
+      "description": "Vénus est la deuxième planète la plus proche du Soleil dans notre système solaire. Cest également la plus chaude (il y fait plus de 470°) et la plus lumineuse du système solaire. Cest une planète tellurique.On la surnomme parfois létoile du matin, ou encore létoile du berger.Vénus possède un diamètre de 12 120 kilomètres. Elle est donc légèrement plus petite que la Terre. La durée de sa rotation autour du Soleil est de 243 jours terrestres. La distance entre Vénus et le Soleil est de 108 millions de kilomètres. Comme la Lune, Vénus a des phases.Particularités : Vénus tourne dans le sens contraire de la Terre. Le Soleil sy lève à louest et se couche à lest.Latmosphère de Vénus est composée de 95 % de dioxyde de carbone, dun peu dazote et de quelques traces dautres gaz. Les nuages sont principalement composés de gouttelettes dacide sulfurique, dun peu deau et de poussière de soufre. Ils se déplacent à environ 350 kilomètres à lheure et font le tour de la planète en 4 jours. Vénus est une planète hostile. Autrement dit, la vie y est impossible car elle est très chaude. ",
       "surfaceTemps": {
         "min": 655,
         "mean": 735,
@@ -117,6 +120,7 @@
       "orbitalVelocity": 29.8,
       "orbitalInclination": 0,
       "axialTilt": 23.4,
+      "description":"La Terre est la troisième planète la plus rapprochée du Soleil dont elle est distante de 150 millions de km. Elle a la forme dune sphéroïde et tourne sur elle-même en vingt-quatre heures environ. En raison de la grande part deau qui la compose, elle est également appelée parfois la planète bleue.de loin on dirait un boule bleu. La terre fait un tour complet sur elle-même en un jour ou 24 heures ou un jour et fait le tour du soleil en 365 . Quand une face de la terre est éclairée par le soleil, il fait jour, et la face contraire est alors plongée dans la nuit. ",
       "orbitPositionOffset": 0,
       "meanTemperature": 15,
       "surfaceTemps": {
@@ -178,6 +182,7 @@
       "orbitalVelocity": 24.1,
       "orbitalInclination": 1.85,
       "axialTilt": 25.2,
+      "description":"Mars est la quatrième planète de notre système solaire en partant du Soleil. Elle se situe juste après Mercure par rapport à sa taille. Mars tient son nom du dieu de la guerre romains, Mars. Cette planète tient son nom du dieu romain de la guerre Mars à cause de sa couleur rougeâtre. On lappelle dailleurs aussi la « planète rouge ». Cette couleur est due aux oxydes de fer (rouille) qui se trouvent dans le sol. Latmosphère de Mars est constituée de plus de 95% de dioxyde de carbone. On y retrouve aussi un peu de vapeur deau. Elle se situe à 228 millions de km du Soleil et met 687 jours pour en faire le tour complet. ",
       "orbitPositionOffset": 85,
       "meanTemperature": -65,
       "surfaceTemps": {
@@ -253,6 +258,7 @@
       "axialTilt": 3.13,
       "orbitPositionOffset": 2692,
       "meanTemperature": -110,
+      "description":"Jupiter est la cinquième planète de notre système solaire et aussi la plus grande. Son nom vient du plus grand des dieux de la mythologie romaine : Jupiter. Des vents violents qui peuvent atteindre plus de 600 km/h traversent quelques fois Jupiter. La surface de Jupiter est pour une partie recouverte dune tache rouge. Cette tache est en fait une gigantesque tornade qui a environ la taille de 3 à 4 fois notre Terre. Sa masse est 320 fois plus grande que celle de la Terre. Jupiter est constituée denviron 80% dhydrogène et 17% dhélium. Jupiter est une planète gazeuse. ",
       "surfaceTemps": {
         "min": null,
         "mean": 125,
@@ -919,6 +925,7 @@
       "orbitalInclination": 2.48524,
       "axialTilt": 26.73,
       "orbitPositionOffset": 13753,
+      "description":"Saturne est, après Jupiter, la deuxième plus grande planète du système solaire. Elle occupe la sixième position à partir du Soleil. Cest aussi la deuxième planète gazeuse. Ses anneaux sont composés de morceaux de glace et de poussières. La température de Saturne est de -143°C. Cette planète possède un climat très hostile. Au pôle Sud de la planète se trouve un ouragan supérieur à la grandeur des États-Unis. Louragan de Saturne est 8000 km plus grand ! Sur cette planète, la foudre serait 1 million de fois plus puissante que sur la planète Terre. Les anneaux de Saturne se sont formés pendant le Big Bang. Saturne a attiré les débris vers lui puis ces derniers se sont tous collés ensemble, formant ensuite les anneaux. ",
       "meanTemperature": -140,
       "surfaceTemps": {
         "min": null,
@@ -1522,6 +1529,7 @@
       "orbitalVelocity": 6.8,
       "orbitalInclination": 0.8,
       "axialTilt": 97.8,
+      "description":"Uranus est la septième planète du système solaire et la troisième plus grande après Saturne. Elle doit son nom au dieu grec du ciel Ouranos, père de Cronos et grand-père de Zeus. Uranus a été la première planète à avoir été découverte à laide dun télescope. Elle est constituée presque totalement dhydrogène et dhélium avec un peu de traces de méthane. Uranus est verte et bleue. Elle tourne sur elle-même en 17 heures. Elle ne tourne pas horizontalement, mais verticalement. Sa révolution est de 84 ans ",
       "orbitPositionOffset": 29654,
       "meanTemperature": -195,
       "surfaceTemps": {
@@ -2077,6 +2085,7 @@
       "orbitalVelocity": 5.4,
       "orbitalInclination": 1.8,
       "axialTilt": 28.3,
+      "description":"Neptune est la huitième et dernière planète du système solaire, la plus éloignée du soleil et la cinquième en grandeur après la Terre. Découverte en 1846, son nom vient du dieu romain Neptune. Comme Uranus et plusieurs autres planètes, Neptune est constituée essentiellement dhydrogène et dhélium. Elle apparaît bleue grâce à la présence de méthane.  ",
       "orbitPositionOffset": 62885,
       "meanTemperature": -200,
       "surfaceTemps": {
@@ -2379,6 +2388,7 @@
       "orbitalPeriod": 90570,
       "orbitalVelocity": 4.67,
       "orbitalInclination": 17.2,
+      "description": " Pluton, formellement nommée (134340) Pluton par lUAI, est la plus grande et deuxième plus massive planète naine du système solaire et aussi la plus lointaine. Pluton nest plus considérée comme une planète depuis le 24 août 2006, mais comme une planète naine car on pense quelle fait partie de la Ceinture de Kuiper parce quelle est trop petite, pas assez ronde et trop éloignée ",
       "axialTilt": 119.59,
       "orbitPositionOffset": 20,
       "meanTemperature": -229,
@@ -2683,5 +2693,6 @@
     }
   }
 }
+
 
 

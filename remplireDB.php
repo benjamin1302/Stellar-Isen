@@ -37,9 +37,10 @@ try
         $masse           = $json_data['planets'][$i]["mass"];
         $density         = $json_data['planets'][$i]["density"];
         $tableauSatelite = $json_data['planets'][$i]['satellites'];
+        $description     = $json_data['planets'][$i]['description'];
 
         echo "test";
-        $sql = "INSERT INTO astre (nom , type , diametre, longueurJour, periodeOrbital, temperatureMoyenne) VALUES ('$name', 'planet', $diametre, $longueurJour, $periodOrbital, $temperatureA)";
+        $sql = "INSERT INTO astre (nom , type , diametre, longueurJour, periodeOrbital, temperatureMoyenne, description) VALUES ('$name', 'planet', $diametre, $longueurJour, $periodOrbital, $temperatureA, '$description')";
         echo $sql . "\n";
         if ($bdd->exec($sql)) {
             echo "New record astre $name created successfully" . "\n";
