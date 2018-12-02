@@ -30,10 +30,10 @@
                 <input type="text" name="pseudo" id="pseudo" placeholder="Votre Pseudonyme" minlength="3" required/>
                 <br />
                 <label for="pass">Votre mot de passe :</label>
-                <input type="password" name="password" id="password" placeholder="Mot de Passe" minlength="4" required/>
+                <input type="password" name="password1" id="password1" placeholder="Mot de Passe" minlength="4" required/>
                 <br />
                 <label for="pass">Confirmez votre mot de passe :</label>
-                <input type="password" name="password" id="password" placeholder="Mot de Passe" minlength="4" required/>
+                <input type="password" name="password2" id="password2" placeholder="Mot de Passe" minlength="4" required/>
             </fieldset>
             <br />
             <input type="submit" id="submit" value="Valider" />

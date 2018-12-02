@@ -22,20 +22,36 @@ if(empty($_POST['pseudo'])) {
         $pseudo = $_POST['pseudo'];
         $password1 = $_POST['password1'];
         $password2 = $_POST['password2'];
-
-        if( $password1 != $password2)
+        $bdd = connexionBDD();
+        if( !$bdd )
+        {
+            echo "<script>console.log( 'echec de conexion a la base de données (bdd.php) ' );</script>";
+        }
+    
+        $sql =  "SELECT id FROM user where user='$pseudo'";
+        
+        $res = $bdd->query($sql);
+        if($res->fetchColumn() > 0 )
+        {
+            echo "<p> User deja existant  ,Cliquez <a href=\"./signin.php\">ici</a> pour retourner à la page d'inscription</p>";
+            return 0;
+        }
+        elseif( $password1 != $password2)
+        {
             echo "<script>alert( 'Les mots de passe ne correspondent pas' );</script>";
-
-        echo "<script>console.log( 'Bonjour' );</script>";
-        if(inscription($pseudo, $password1))
+            echo "<p> Echec de l'inscription  ,Cliquez <a href=\"./signin.php\">ici</a> pour retourner à la page d'inscription</p>";
+            echo "<script>console.log( 'Bonjour' );</script>";
+            return 0;
+        }
+        elseif(inscription($pseudo, $password1))
         {
             echo "<script>console.log( 'Inscription reussi' );</script>";
-            echo "<p> Inscription reussi  ,Cliquez <a href=\"./signin.php\">ici</a> pour aller à la page de connexion</p>";
+            header ('location: http://127.0.0.1/Stellar-Isen/miarfid-solar-system/index.php');
         }
         else
         {
             echo "<script>console.log( 'Inscription echoue' );</script>";
-            echo "<p> Echec de l'inscription  ,Cliquez <a href=\"./signin.php\">ici</a> pour retourner à la page d'inscription</p>";
+            echo "<p> Echec de l'inscription  ,Cliquez <a href=\"./login.php\">ici</a> pour retourner à la page d'inscription</p>";
         }
     }
 }

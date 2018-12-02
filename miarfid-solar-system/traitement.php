@@ -17,7 +17,6 @@ include('bdd.php');
 if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
     // on vérifie que le champ "Pseudo" n'est pas vide
     echo "<script>console.log( 'Bonjour' );</script>";
-
     // empty vérifie à la fois si le champ est vide et si le champ existe belle et bien (is set)
     if(empty($_POST['pseudo'])) {
         echo "Le champ Pseudo est vide.";
@@ -42,7 +41,7 @@ if(isset($_POST['submit'])) { // si le bouton "Connexion" est appuyé
                 echo "<p> $message ,vous allez etre rediriger vers la page d'acceuil</p>";
                 echo "<script>alert( 'Connexion reussi' );</script>";
                 sleep(5);
-                header ('location: http://127.0.0.1/test/Stellar-Isen/miarfid-solar-system/index.php');
+                header ('location: http://127.0.0.1/Stellar-Isen/miarfid-solar-system/index.php');
             }
             else{
                 $message="Mot de passe ou pseudo invalide";

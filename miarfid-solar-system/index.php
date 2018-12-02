@@ -22,7 +22,7 @@ $satList[3] = getSat('Saturn');
 $satList[4] = getSat('Uranus');
 $satList[5] = getSat('Neptune');
 
-$searchList = array(array());
+
 ?>
 
 
@@ -57,8 +57,8 @@ $searchList = array(array());
             </div>
         </ul>
     </nav>
-    <form id="searchbar">
-        <input type="search" placeholder="Recherche" id="search_input">
+    <form id="searchbar" method="post" action="searchbar.php">
+        <input type="search" placeholder="Recherche" id="search_input" name="search_input">
         <button type="submit"><i class="fa fa-check"></i></button>
         <ul id="result" class="hidden">
         </ul>

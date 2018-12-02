@@ -23,12 +23,13 @@
 
         <div id="formulary">
         <h1>Identifiez-vous !</h1>
+        <!--Nom de fichier de traitement back à modifier-->
         <form method="post" action="traitement.php">
             <input type="text" name="pseudo" id="pseudo" placeholder="Votre Pseudonyme" minlength="3" required/>
             <br />
             <input type="password" name="password" id="password" placeholder="Mot de Passe" minlength="4" required/>
             <br />
-            <input type="submit" id="submit" value="Valider" />
+            <input type="submit" id="submit" name="submit" value="Valider" />
         </form>
         </div>
         

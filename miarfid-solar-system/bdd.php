@@ -204,7 +204,7 @@ function inscription( $user, $passaword)
     {
         echo "<script>console.log( 'echec de conexion a la base de données (bdd.php) ' );</script>";
     }
-    
+
     $sql = "insert into user(user,password) values('$user','$passaword')";
     if($bdd->query($sql))
     {
@@ -220,6 +220,6 @@ function inscription( $user, $passaword)
     }
 }
 
-inscription("benj","benji");
+//inscription("benji","benji");
 
 ?>
