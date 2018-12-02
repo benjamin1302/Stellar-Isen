@@ -16,7 +16,8 @@ CREATE TABLE astre
     periodeOrbital float,
     temperatureMoyenne float default null,
     densite float,
-    masse float 
+    masse float,
+    description text
 );
 
 
@@ -29,6 +30,7 @@ CREATE TABLE satellite
     periodeOrbital float not null,
     temperatureMoyenne float default null,
     masse float,
+    description text,
     FOREIGN KEY (astreId) REFERENCES astre(id)
 );
 
@@ -38,7 +40,8 @@ create table tag
       userId int,
       tag VARCHAR(255) not null,
       astreId int,
+      satId int,
       FOREIGN KEY (userId) REFERENCES user(id),
-      FOREIGN KEY (astreId) REFERENCES astre(id)
-
+      FOREIGN KEY (astreId) REFERENCES astre(id),
+      FOREIGN KEY (satId) REFERENCES satellite(id)
 );
