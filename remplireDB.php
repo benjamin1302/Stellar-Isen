@@ -16,8 +16,9 @@ try
     // set the PDO error mode to exception
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    $description     = $json_data['parent']['description'];
 
-    $sql = "INSERT INTO astre (nom , type , diametre, longueurJour, periodeOrbital, temperatureMoyenne) VALUES ('Soleil', 'Etoile', 1391016, null ,null , 5778)";
+    $sql = "INSERT INTO astre (nom , type , diametre, longueurJour, periodeOrbital, temperatureMoyenne, description) VALUES ('Soleil', 'Etoile', 1391016, null ,null , 5778, '$description')";
     echo $sql . "\n";
     if ($bdd->exec($sql)) {
         echo "New record astre 'sun' created successfully" . "\n";
@@ -54,7 +55,7 @@ try
         {
             for ( $u = 0 ; $u < count($tableauSatelite) ; $u++)
             {
-                $astreId            = $i + 1;
+                $astreId            = $i + 2;
                 $nameSat            = $json_data['planets'][$i]['satellites'][$u]['name'];
                 $diametreSat        = $json_data['planets'][$i]["satellites"][$u]['diameter'];
                 $periodOrbitalSat   = $json_data['planets'][$i]['satellites'][$u]["orbitalPeriod"];
