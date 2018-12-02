@@ -146,14 +146,14 @@ function getTagsbySat($name)
     return $tagList;
 }
 
-function getSearchList()
+function getSearchList($name)
 {
     $searchList = array(array());
     try {
         $bdd = connexionBDD();
         // set the PDO error mode to exception
 
-        $sql =  "SELECT a.nom, t.tag FROM astre a, tag t WHERE a.id = t.astreId";
+        $sql =  "SELECT a.nom, t.tag FROM astre a, tag t WHERE a.id = t.astreId and t.tag='$name'";
         foreach  ($bdd->query($sql) as $row) {
             $searchList[0] = $row['nom'];
             $searchList[1] = $row['tag'];
@@ -171,6 +171,10 @@ function getSearchList()
 function authentification( $user, $password)
 {
     $bdd = connexionBDD();
+    if( !$bdd )
+    {
+        echo "<script>console.log( 'echec de conexion a la base de données (bdd.php) ' );</script>";
+    }
     $sql =  "SELECT id, user FROM user where user='$user' and password='$password'";
 
     $res = $bdd->query($sql);
@@ -192,5 +196,30 @@ function authentification( $user, $password)
 
     return true;
 }
+
+function inscription( $user, $passaword)
+{
+    $bdd = connexionBDD();
+    if( !$bdd )
+    {
+        echo "<script>console.log( 'echec de conexion a la base de données (bdd.php) ' );</script>";
+    }
+    
+    $sql = "insert into user(user,password) values('$user','$passaword')";
+    if($bdd->query($sql))
+    {
+        echo "inscription reussi";
+        echo "<script>console.log( 'conexion a la base de données (bdd.php) ' );</script>";
+        return true;
+    }
+    else
+    {
+        echo "<script>console.log( 'echec conexion a la base de données (bdd.php) ' );</script>";
+        echo  "inscription Failed";
+        return false;
+    }
+}
+
+inscription("benj","benji");
 
 ?>

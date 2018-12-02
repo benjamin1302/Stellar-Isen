@@ -14,6 +14,7 @@ $listePlanet[7] = getPlanetInfo('Uranus');
 $listePlanet[8] = getPlanetInfo('Neptune');
 
 $satList = array(array());
+
 $satList[0] = getSat('Earth');
 $satList[1] = getSat('Mars');
 $satList[2] = getSat('Jupiter');
@@ -21,6 +22,7 @@ $satList[3] = getSat('Saturn');
 $satList[4] = getSat('Uranus');
 $satList[5] = getSat('Neptune');
 
+$searchList = array(array());
 ?>
 
 
@@ -59,8 +61,6 @@ $satList[5] = getSat('Neptune');
         <input type="search" placeholder="Recherche" id="search_input">
         <button type="submit"><i class="fa fa-check"></i></button>
         <ul id="result" class="hidden">
-            <?php
-            ?>
         </ul>
     </form>
 </header>
@@ -181,6 +181,8 @@ $satList[5] = getSat('Neptune');
 <script src="lib/dat.gui.min.js"></script>
 <script src="lib/stats.min.js"></script>
 <script src="lib/threex.keyboardstate.js"></script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script src="solar-system.js"></script>
 <script src="searchbar.js"></script>

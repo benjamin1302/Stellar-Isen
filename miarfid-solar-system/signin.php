@@ -23,8 +23,7 @@
 
         <div id="formulary">
         <h1>Créez votre Compte</h1>
-        <!--Nom de fichier de traitement back à modifier-->
-        <form method="post" action="traitement.php">
+        <form method="post" action="inscription.php">
             <fieldset>
                 <h2>Identifiants</h2>
                 <label for="pseudo">Nom de Compte :</label>  

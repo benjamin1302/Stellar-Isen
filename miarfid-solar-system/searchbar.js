@@ -8,6 +8,7 @@ function list_request(){
         var text = input.value;
         if (text != ""){
             list.className = 'visible';
+            list.innerHTML = "<?php $searchList = getSearchList("+text+")?>";
         }
         else if (text == ""){
             list.className = 'hidden';
